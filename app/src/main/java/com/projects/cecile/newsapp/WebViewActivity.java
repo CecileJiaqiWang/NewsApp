@@ -6,7 +6,6 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.view.menu.MenuPopupHelper;
 import android.support.v7.widget.PopupMenu;
@@ -19,7 +18,9 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-public class WebViewActivity extends AppCompatActivity
+import com.projects.cecile.newsapp.common.TinBasicActivity;
+
+public class WebViewActivity extends TinBasicActivity
         implements PopupMenu.OnMenuItemClickListener {
     public static final String URL = "url";
     private String url = null;
@@ -78,6 +79,12 @@ public class WebViewActivity extends AppCompatActivity
 
     }
 
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_web_view;
+    }
+
+
     @SuppressLint("RestrictedApi")
     private void showMenu(View view) {
         PopupMenu menu = new PopupMenu(this, view);
@@ -112,4 +119,8 @@ public class WebViewActivity extends AppCompatActivity
     }
 
 
+    @Override
+    public void showSnackBar(String message) {
+
+    }
 }
