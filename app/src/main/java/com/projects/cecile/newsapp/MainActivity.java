@@ -1,9 +1,5 @@
 package com.projects.cecile.newsapp;
-
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 
 import com.projects.cecile.newsapp.common.TinBasicActivity;
 
@@ -13,16 +9,7 @@ public class MainActivity extends TinBasicActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //add click listener here
-        findViewById(R.id.text_view).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
-                startActivity(intent);
-            }
-        });
     }
-
 
     @Override
     protected int getLayout() {
@@ -34,3 +21,4 @@ public class MainActivity extends TinBasicActivity {
 
     }
 }
+
